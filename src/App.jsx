@@ -153,7 +153,7 @@ const advantages = [
 function Logo({ light = false }) {
   return (
     <a className={`brand${light ? " brand-light" : ""}`} href="#home" aria-label="UZERO Solutions home">
-      <img className="brand-logo" src="/uzero-logo.png" alt="" />
+      <img className="brand-logo" src={`${import.meta.env.BASE_URL}uzero-logo.png`} alt="" />
     </a>
   );
 }
@@ -258,7 +258,7 @@ function App() {
           <nav id="main-navigation" className={menuOpen ? "main-nav nav-open" : "main-nav"} aria-label="Main navigation">
             {navigation.map(([label, href]) => <a key={label} href={href} onClick={closeMenu}>{label}{label === "Courses" && <span className="nav-count">{courseCount}+</span>}</a>)}
             <a className="nav-internship" href="#programs" onClick={() => { setProgramTab("internships"); closeMenu(); }}>Apply Internship</a>
-            <Button className="nav-cta" type="button" variant="contained" onClick={() => connect("I'd like to enquire about enrollment or a project quote.", "Enrollment or project quote")}>Enroll / Get Quote <Icon icon={faArrowUpRightFromSquare} /></Button>
+            <Button className="nav-cta" type="button" variant="contained" onClick={() => connect("I'd like to enquire about enrollment or a project quote.", "Enrollment or project quote")}>Enroll Now <Icon icon={faArrowUpRightFromSquare} /></Button>
           </nav>
         </div>
       </header>
